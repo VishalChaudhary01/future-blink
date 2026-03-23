@@ -2,6 +2,10 @@
 
 A node-based AI prompt interface built with the MERN stack. Where user can type a prompt into a box, click "Run", and see the AI's response in another box, connected by a line.
 
+Live URL: https://future-blink-sigma.vercel.app
+
+Demo Video: https://www.loom.com/share/fdbd534723854f71bc35e56844c2de33
+
 ## How to Run
 
 ### 1. Clone the repo
