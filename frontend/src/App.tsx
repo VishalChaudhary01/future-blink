@@ -12,6 +12,8 @@ import ResultNode from "./components/ResultNode";
 import axios from "axios";
 import { toast } from "sonner";
 
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 export const nodeTypes = {
   inputNode: InputNode,
   resultNode: ResultNode,
@@ -115,7 +117,7 @@ export default function App() {
     updateNodes(prompt, "", true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/ask-ai", {
+      const res = await axios.post(`${BASE_URL}/api/ask-ai`, {
         prompt,
       });
 
@@ -139,7 +141,7 @@ export default function App() {
     setSaving(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/save", {
+      const res = await axios.post(`${BASE_URL}/api/save`, {
         prompt,
         response,
       });
@@ -171,14 +173,14 @@ export default function App() {
           <button
             onClick={handleSave}
             disabled={saving}
-            className="px-6 py-1.5 border rounded-md border-gray-300 shadow-sm text-base font-medium text-gray-700"
+            className="px-6 py-1.5 border rounded-md border-gray-300 shadow-sm text-base font-medium text-gray-700 cursor-pointer"
           >
             Save
           </button>
           <button
             onClick={handleRun}
             disabled={loading}
-            className="px-6 py-1.5 border rounded-md border-gray-300 shadow-sm text-base font-medium bg-gray-700 text-white"
+            className="px-6 py-1.5 border rounded-md border-gray-300 shadow-sm text-base font-medium bg-gray-700 text-white cursor-pointer"
           >
             {loading ? "Running..." : "Run"}
           </button>
