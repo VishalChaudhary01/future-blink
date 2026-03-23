@@ -5,7 +5,7 @@ export const askAi: RequestHandler = async (req, res) => {
   const { prompt } = req.body;
 
   if (!prompt) {
-    res.status(400).json({ message: "Prompt is required" });
+    return res.status(400).json({ message: "Prompt is required" });
   }
 
   try {
@@ -18,7 +18,7 @@ export const askAi: RequestHandler = async (req, res) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+          model: "openrouter/free",
           messages: [{ role: "user", content: prompt }],
         }),
       },
