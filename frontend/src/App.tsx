@@ -23,7 +23,7 @@ const initialEdges = [
     source: "n1",
     target: "n2",
     animated: false,
-    style: { stroke: "#3b3a39", strokeWidth: 1 },
+    style: { stroke: "#9ca3af", strokeWidth: 1 },
   },
 ];
 
@@ -90,7 +90,7 @@ export default function App() {
         eds.map((e) => ({
           ...e,
           animated: true,
-          style: { stroke: "#3b3a39", strokeWidth: 1, strokeDasharray: "6 3" },
+          style: { stroke: "#9ca3af", strokeWidth: 1, strokeDasharray: "6 3" },
         })),
       );
     } else {
@@ -99,7 +99,7 @@ export default function App() {
           ...e,
           animated: false,
           style: {
-            stroke: "#3b3a39",
+            stroke: "#9ca3af",
             strokeWidth: 1,
           },
         })),
